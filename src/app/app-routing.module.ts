@@ -9,6 +9,7 @@ import { MenuCategoriesComponent } from './components/menu-categories/menu-categ
 import { ProductsTableComponent } from './components/products-table/products-table.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
+import { LoginComponent } from './components/login/login.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductServiceModule } from './services/product.service-module';
 import { SelectCategoryComponentModule } from './components/select-category/select-category.component-module';
@@ -22,7 +23,9 @@ import { MenuCategoriesComponentModule } from './components/menu-categories/menu
 import { ProductsTableComponentModule } from './components/products-table/products-table.component-module';
 import { ProductFormComponentModule } from './components/product-form/product-form.component-module';
 import { EmployeeFormComponentModule } from './components/employee-form/employee-form.component-module';
-import {EmployeeServiceModule} from "./services/employee.service-module";
+import { EmployeeServiceModule } from './services/employee.service-module';
+import { LoginComponentModule } from './components/login/login.component-module';
+import {LoginServiceModule} from "./services/login.service-module";
 
 @NgModule({
   imports: [RouterModule.forRoot(
@@ -35,8 +38,9 @@ import {EmployeeServiceModule} from "./services/employee.service-module";
       { path: 'categories-menu', component: MenuCategoriesComponent },
       { path: 'product-search', component: ProductsTableComponent },
       { path: 'create-product', component: ProductFormComponent },
-      { path: 'create-employee', component: EmployeeFormComponent }
-    ]), ProductListComponentModule, ProductServiceModule, SelectCategoryComponentModule, CategoryServiceModule, CryptoChipComponentModule, CryptoServiceModule, PublicHolidaySelectComponentModule, PublicHolidayServiceModule, CheckboxCategoriesComponentModule, MenuCategoriesComponentModule, ProductsTableComponentModule, ProductFormComponentModule, EmployeeFormComponentModule, EmployeeServiceModule],
+      { path: 'create-employee', component: EmployeeFormComponent },
+      { path: 'login', component: LoginComponent }
+    ]), ProductListComponentModule, ProductServiceModule, SelectCategoryComponentModule, CategoryServiceModule, CryptoChipComponentModule, CryptoServiceModule, PublicHolidaySelectComponentModule, PublicHolidayServiceModule, CheckboxCategoriesComponentModule, MenuCategoriesComponentModule, ProductsTableComponentModule, ProductFormComponentModule, EmployeeFormComponentModule, EmployeeServiceModule, LoginComponentModule, LoginServiceModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -15,7 +15,7 @@
       <mat-label>
         Price
       </mat-label>
-      <input matInput type="text" placeholder="Price" formControlName="price" required>
+      <input matInput type="number" placeholder="Price" formControlName="price" required>
       <mat-error *ngIf="productForm.get('price')!.invalid">
         price is invalid
       </mat-error>

@@ -23,7 +23,7 @@ export class EmployeeFormComponent {
     this._employeeService.create({
       name: employeeForm.get('name')?.value,
       id: employeeForm.get('id')?.value,
-      salary:employeeForm.get('salary')?.value,
+      salary: employeeForm.get('salary')?.value,
       age: employeeForm.get('age')?.value
     }).subscribe({next: () => alert('Success')});
   }
