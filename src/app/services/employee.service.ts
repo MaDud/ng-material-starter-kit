@@ -8,7 +8,7 @@ export class EmployeeService {
   constructor(private _httpClient: HttpClient) {
   }
 
-  create(employee: EmployeeModel): Observable<void> {
-    return this._httpClient.post<EmployeeModel>('https://dummy.restapiexample.com/api/v1/create', employee).pipe(map(_ =>void 0));
+  create(employee: EmployeeModel): Observable<EmployeeModel> {
+    return this._httpClient.post<EmployeeModel>('https://dummy.restapiexample.com/api/v1/create', employee)
   }
 }

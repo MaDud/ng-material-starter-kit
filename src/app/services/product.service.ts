@@ -12,7 +12,7 @@ export class ProductService {
     return this._httpClient.get<ProductModel[]>('https://fakestoreapi.com/products')
   }
 
-  create(product: ProductModel): Observable<void> {
-    return this._httpClient.post('https://fakestoreapi.com/products', product).pipe(map(_ => void 0));
+  create(product: ProductModel): Observable<ProductModel> {
+    return this._httpClient.post<ProductModel>('https://fakestoreapi.com/products', product)
   }
 }
