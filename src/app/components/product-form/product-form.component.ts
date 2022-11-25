@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../../services/product.service';
-import { ProductModel } from '../../models/product.model';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-product-form',
@@ -11,6 +11,8 @@ import { ProductModel } from '../../models/product.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductFormComponent {
+  category$ = this._categoryService.getAll()
+
   readonly productForm: FormGroup = new FormGroup({
     title: new FormControl(null, [Validators.required]),
     price: new FormControl(null, [Validators.required, Validators.min(0)]),
@@ -19,7 +21,7 @@ export class ProductFormComponent {
     category: new FormControl(null)
   });
 
-  constructor(private _productService: ProductService) {
+  constructor(private _productService: ProductService, private _categoryService: CategoryService) {
   }
 
   onProductFormSubmitted(productForm: FormGroup): void {
