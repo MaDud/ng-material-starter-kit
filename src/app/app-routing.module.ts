@@ -10,6 +10,7 @@ import { ProductsTableComponent } from './components/products-table/products-tab
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductServiceModule } from './services/product.service-module';
 import { SelectCategoryComponentModule } from './components/select-category/select-category.component-module';
@@ -25,7 +26,9 @@ import { ProductFormComponentModule } from './components/product-form/product-fo
 import { EmployeeFormComponentModule } from './components/employee-form/employee-form.component-module';
 import { EmployeeServiceModule } from './services/employee.service-module';
 import { LoginComponentModule } from './components/login/login.component-module';
-import {LoginServiceModule} from "./services/login.service-module";
+import { LoginServiceModule } from './services/login.service-module';
+import { RegistrationFormComponentModule } from './components/registration-form/registration-form.component-module';
+import {RegistrationServiceModule} from "./services/registration.service-module";
 
 @NgModule({
   imports: [RouterModule.forRoot(
@@ -39,8 +42,9 @@ import {LoginServiceModule} from "./services/login.service-module";
       { path: 'product-search', component: ProductsTableComponent },
       { path: 'create-product', component: ProductFormComponent },
       { path: 'create-employee', component: EmployeeFormComponent },
-      { path: 'login', component: LoginComponent }
-    ]), ProductListComponentModule, ProductServiceModule, SelectCategoryComponentModule, CategoryServiceModule, CryptoChipComponentModule, CryptoServiceModule, PublicHolidaySelectComponentModule, PublicHolidayServiceModule, CheckboxCategoriesComponentModule, MenuCategoriesComponentModule, ProductsTableComponentModule, ProductFormComponentModule, EmployeeFormComponentModule, EmployeeServiceModule, LoginComponentModule, LoginServiceModule],
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegistrationFormComponent }
+    ]), ProductListComponentModule, ProductServiceModule, SelectCategoryComponentModule, CategoryServiceModule, CryptoChipComponentModule, CryptoServiceModule, PublicHolidaySelectComponentModule, PublicHolidayServiceModule, CheckboxCategoriesComponentModule, MenuCategoriesComponentModule, ProductsTableComponentModule, ProductFormComponentModule, EmployeeFormComponentModule, EmployeeServiceModule, LoginComponentModule, LoginServiceModule, RegistrationFormComponentModule, RegistrationServiceModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
